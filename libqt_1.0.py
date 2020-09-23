@@ -2,12 +2,13 @@ import sys
 
 from PySide2.QtWidgets import QApplication
 from lib_widgets import MainWindow
+from db_loading import *
 
 
 def main(argv):
     app = QApplication(argv)
-    # model = DBBuilder.build()
-    m_window = MainWindow()
+    model = DBBuilder.build()
+    m_window = MainWindow(model)
     m_window.show()
     
 
