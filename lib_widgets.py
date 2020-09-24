@@ -3,6 +3,7 @@ from PySide2.QtCore import Slot, QModelIndex
 from ui_mainwindow import Ui_MainWindow
 from PySide2.QtWidgets import QWidget
 from ui_addbook import Ui_Form
+from ui_filterbook import Ui_Form2
 from db_loading import Book
 
 
@@ -24,6 +25,29 @@ class AddBookWidget(QWidget):
     @Slot()
     def cancellation(self):
         self.close()
+
+
+class FilterBookWidget(QWidget):
+    def __init__(self, model):
+        super().__init__()
+        self.__fltr = Ui_Form2()
+        self.__fltr.setupUi(self)
+        self.model = model
+        # self.__addui.pushButton.clicked.connect(self.addition)
+        # self.__addui.pushButton_2.clicked.connect(self.cancellation)
+        # self.model.experimental_search("Sample2")
+        word = "Sample2"
+        self.model.setFilter(f'title = "{word}"')
+    
+    # @Slot()
+    # def addition(self):
+    #     book = Book(self.__addui.lineEdit.text(), self.__addui.lineEdit_2.text(), self.__addui.lineEdit_3.text())
+    #     self.model.addBook(book)
+    #     self.model.select()
+    #
+    # @Slot()
+    # def cancellation(self):
+    #     self.close()
 
      
 class MainWindow(QMainWindow):
@@ -58,9 +82,10 @@ class MainWindow(QMainWindow):
 
     @Slot()
     def searchBook(self):
-        #self.model.experimental_search("Sample2")
-        word = "Sample2"
-        self.model.setFilter(f'title = "{word}"')
+        self.fltrwidget = FilterBookWidget(self.model)
+        fltr_w = self.fltrwidget
+        fltr_w.show()
+        
         
         
         
