@@ -1,5 +1,5 @@
 from PySide2.QtWidgets import QMainWindow
-from PySide2.QtCore import Slot, QModelIndex
+from PySide2.QtCore import Slot, QModelIndex, Qt
 from ui_mainwindow import Ui_MainWindow
 from PySide2.QtWidgets import QWidget
 from ui_addbook import Ui_Form
@@ -14,7 +14,7 @@ class AddBookWidget(QWidget):
         self.__addui.setupUi(self)
         self.model = model
         self.__addui.pushButton.clicked.connect(self.addition)
-        self.__addui.pushButton_2.clicked.connect(self.cancellation)
+        self.__addui.pushButton_2.clicked.connect(self.closing)
         
     @Slot()
     def addition(self):
@@ -23,7 +23,7 @@ class AddBookWidget(QWidget):
         self.model.select()
         
     @Slot()
-    def cancellation(self):
+    def closing(self):
         self.close()
 
 
@@ -33,21 +33,32 @@ class FilterBookWidget(QWidget):
         self.__fltr = Ui_Form2()
         self.__fltr.setupUi(self)
         self.model = model
-        # self.__addui.pushButton.clicked.connect(self.addition)
-        # self.__addui.pushButton_2.clicked.connect(self.cancellation)
-        # self.model.experimental_search("Sample2")
-        word = "Sample2"
-        self.model.setFilter(f'title = "{word}"')
+        self.__fltr.pushButton.clicked.connect(self.apply)
+        self.__fltr.pushButton_2.clicked.connect(self.reset)
+        self.__fltr.pushButton_3.clicked.connect(self.closing)
+        self.__fltr.radioButton.setChecked(True)
+        
+    @Slot()
+    def apply(self):
+        column = ""
+        if self.__fltr.radioButton.isChecked():
+            column = "author"
+        elif self.__fltr.radioButton_2.isChecked():
+            column = "title"
+        elif self.__fltr.radioButton_3.isChecked():
+            column = "year"
+        text = self.__fltr.lineEdit.text()
+        self.model.setFilter(f'{column} = "{text}"')
+        self.model.select()
+
+    @Slot()
+    def reset(self):
+        self.model.setFilter('')
+        self.model.select()
     
-    # @Slot()
-    # def addition(self):
-    #     book = Book(self.__addui.lineEdit.text(), self.__addui.lineEdit_2.text(), self.__addui.lineEdit_3.text())
-    #     self.model.addBook(book)
-    #     self.model.select()
-    #
-    # @Slot()
-    # def cancellation(self):
-    #     self.close()
+    @Slot()
+    def closing(self):
+        self.close()
 
      
 class MainWindow(QMainWindow):
