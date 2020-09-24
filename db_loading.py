@@ -1,5 +1,6 @@
 import sys
 
+from PySide2 import QtCore, QtGui
 from PySide2.QtCore import QModelIndex, Qt
 from PySide2.QtSql import QSqlTableModel, QSqlRecord, QSqlField, QSqlDatabase, QSqlQuery
 from PySide2.QtWidgets import QApplication
@@ -17,7 +18,7 @@ class MyTableModel(QSqlTableModel):
 	
 	def __init__(self, *args, **kwargs):
 		super().__init__(*args, **kwargs)
-	
+		
 	def flags(self, index: QModelIndex):
 		return Qt.ItemIsSelectable | Qt.ItemIsEditable | Qt.ItemIsEnabled
 	
@@ -51,8 +52,8 @@ class MyTableModel(QSqlTableModel):
 	def searchBook(self, book):
 		index = self.createIndex(2, 0)
 		print(self.data(index))
-
-
+		
+		
 class DBBuilder:
 	@staticmethod
 	def build():

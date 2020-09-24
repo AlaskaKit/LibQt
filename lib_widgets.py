@@ -38,6 +38,7 @@ class MainWindow(QMainWindow):
         self.__mwui.tableView.clicked.connect(self.printIndex)
         self.__mwui.delBookButton.clicked.connect(self.deleteBook)
         self.__mwui.addBookButton.clicked.connect(self.addBook)
+        self.__mwui.searchBookButton.clicked.connect(self.searchBook)
         self.__row = 0
         
     @Slot(QModelIndex)
@@ -54,6 +55,13 @@ class MainWindow(QMainWindow):
         self.addwidget = AddBookWidget(self.model)
         add_w = self.addwidget
         add_w.show()
+
+    @Slot()
+    def searchBook(self):
+        #self.model.experimental_search("Sample2")
+        word = "Sample2"
+        self.model.setFilter(f'title = "{word}"')
+        
         
         
 
