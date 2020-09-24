@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'SearchBookWidget.ui'
+## Form generated from reading UI file 'FilterBookWidget.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.1
 ##
@@ -17,24 +17,21 @@ class Ui_Form(object):
     def setupUi(self, Form):
         if not Form.objectName():
             Form.setObjectName(u"Form")
-        Form.resize(526, 184)
-        self.tableView = QTableView(Form)
-        self.tableView.setObjectName(u"tableView")
-        self.tableView.setGeometry(QRect(12, 12, 256, 161))
-        self.widget = QWidget(Form)
-        self.widget.setObjectName(u"widget")
-        self.widget.setGeometry(QRect(276, 13, 241, 164))
-        self.verticalLayout_2 = QVBoxLayout(self.widget)
+        Form.resize(283, 184)
+        self.layoutWidget = QWidget(Form)
+        self.layoutWidget.setObjectName(u"layoutWidget")
+        self.layoutWidget.setGeometry(QRect(10, 10, 256, 164))
+        self.verticalLayout_2 = QVBoxLayout(self.layoutWidget)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout = QHBoxLayout()
         self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.lineEdit = QLineEdit(self.widget)
+        self.lineEdit = QLineEdit(self.layoutWidget)
         self.lineEdit.setObjectName(u"lineEdit")
 
         self.horizontalLayout.addWidget(self.lineEdit)
 
-        self.pushButton = QPushButton(self.widget)
+        self.pushButton = QPushButton(self.layoutWidget)
         self.pushButton.setObjectName(u"pushButton")
 
         self.horizontalLayout.addWidget(self.pushButton)
@@ -46,20 +43,30 @@ class Ui_Form(object):
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.verticalLayout = QVBoxLayout()
         self.verticalLayout.setObjectName(u"verticalLayout")
-        self.radioButton = QRadioButton(self.widget)
+        self.radioButton = QRadioButton(self.layoutWidget)
         self.radioButton.setObjectName(u"radioButton")
 
         self.verticalLayout.addWidget(self.radioButton)
 
-        self.radioButton_2 = QRadioButton(self.widget)
+        self.radioButton_2 = QRadioButton(self.layoutWidget)
         self.radioButton_2.setObjectName(u"radioButton_2")
 
         self.verticalLayout.addWidget(self.radioButton_2)
 
-        self.radioButton_3 = QRadioButton(self.widget)
+        self.radioButton_3 = QRadioButton(self.layoutWidget)
         self.radioButton_3.setObjectName(u"radioButton_3")
 
         self.verticalLayout.addWidget(self.radioButton_3)
+
+        self.pushButton_2 = QPushButton(self.layoutWidget)
+        self.pushButton_2.setObjectName(u"pushButton_2")
+
+        self.verticalLayout.addWidget(self.pushButton_2)
+
+        self.pushButton_3 = QPushButton(self.layoutWidget)
+        self.pushButton_3.setObjectName(u"pushButton_3")
+
+        self.verticalLayout.addWidget(self.pushButton_3)
 
         self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
@@ -67,10 +74,6 @@ class Ui_Form(object):
 
 
         self.horizontalLayout_2.addLayout(self.verticalLayout)
-
-        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.horizontalLayout_2.addItem(self.horizontalSpacer)
 
 
         self.verticalLayout_2.addLayout(self.horizontalLayout_2)
@@ -83,9 +86,11 @@ class Ui_Form(object):
 
     def retranslateUi(self, Form):
         Form.setWindowTitle(QCoreApplication.translate("Form", u"Form", None))
-        self.pushButton.setText(QCoreApplication.translate("Form", u"PushButton", None))
-        self.radioButton.setText(QCoreApplication.translate("Form", u"RadioButton", None))
-        self.radioButton_2.setText(QCoreApplication.translate("Form", u"RadioButton", None))
-        self.radioButton_3.setText(QCoreApplication.translate("Form", u"RadioButton", None))
+        self.pushButton.setText(QCoreApplication.translate("Form", u"Apply", None))
+        self.radioButton.setText(QCoreApplication.translate("Form", u"Filter by author", None))
+        self.radioButton_2.setText(QCoreApplication.translate("Form", u"Filter by title", None))
+        self.radioButton_3.setText(QCoreApplication.translate("Form", u"Filter by year", None))
+        self.pushButton_2.setText(QCoreApplication.translate("Form", u"Reset filters", None))
+        self.pushButton_3.setText(QCoreApplication.translate("Form", u"Close", None))
     # retranslateUi
 

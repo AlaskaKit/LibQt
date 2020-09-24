@@ -92,6 +92,6 @@ class Ui_Form(object):
         self.label_2.setText(QCoreApplication.translate("Form", u"Title", None))
         self.label_3.setText(QCoreApplication.translate("Form", u"Year", None))
         self.pushButton.setText(QCoreApplication.translate("Form", u"Add a book", None))
-        self.pushButton_2.setText(QCoreApplication.translate("Form", u"Cancel", None))
+        self.pushButton_2.setText(QCoreApplication.translate("Form", u"Close", None))
     # retranslateUi
 

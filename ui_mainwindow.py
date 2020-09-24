@@ -71,9 +71,9 @@ class Ui_MainWindow(object):
     # setupUi
 
     def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
+        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Library Qt v1.0", None))
         self.addBookButton.setText(QCoreApplication.translate("MainWindow", u"Add book", None))
         self.delBookButton.setText(QCoreApplication.translate("MainWindow", u"Delete book", None))
-        self.searchBookButton.setText(QCoreApplication.translate("MainWindow", u"Search", None))
+        self.searchBookButton.setText(QCoreApplication.translate("MainWindow", u"Set filter", None))
     # retranslateUi
 
