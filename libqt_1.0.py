@@ -2,7 +2,7 @@ import sys
 
 from PySide2.QtWidgets import QApplication
 from lib_widgets import MainWindow
-from db_loading import *
+from db_initializing import *
 
 
 def main(argv):

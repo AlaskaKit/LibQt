@@ -46,13 +46,6 @@ class MyTableModel(QSqlTableModel):
 		self.insertRecord(rowCount, book_record)
 		self.select()
 		
-		index = self.createIndex(0, 1)
-		print(self.data(index))
-	
-	def searchBook(self, book):
-		index = self.createIndex(2, 0)
-		print(self.data(index))
-		
 		
 class DBBuilder:
 	@staticmethod

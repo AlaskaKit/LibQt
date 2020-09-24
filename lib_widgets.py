@@ -4,7 +4,7 @@ from ui_mainwindow import Ui_MainWindow
 from PySide2.QtWidgets import QWidget
 from ui_addbook import Ui_Form
 from ui_filterbook import Ui_Form2
-from db_loading import Book
+from db_initializing import Book
 
 
 class AddBookWidget(QWidget):
