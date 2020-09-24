@@ -11,16 +11,21 @@ class AddBookWidget(QWidget):
         super().__init__()
         self.__addui = Ui_Form()
         self.__addui.setupUi(self)
+        self.model = model
         self.__addui.pushButton.clicked.connect(self.addition)
+        self.__addui.pushButton_2.clicked.connect(self.cancellation)
         
     @Slot()
     def addition(self):
-        book = Book(self.titleEdit.text(), self.authorEdit.text(), self.yearEdit.text())
+        book = Book(self.__addui.lineEdit.text(), self.__addui.lineEdit_2.text(), self.__addui.lineEdit_3.text())
         self.model.addBook(book)
+        self.model.select()
         
-        
+    @Slot()
+    def cancellation(self):
+        self.close()
 
-
+     
 class MainWindow(QMainWindow):
     def __init__(self, model):
         super().__init__()
