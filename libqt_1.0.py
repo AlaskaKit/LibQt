@@ -16,8 +16,5 @@ def main(argv):
 
 
 if __name__ == '__main__':
-
-    # os.environ['QT_QPA_PLATFORM_PLUGIN_PATH'] = './platforms'
-
     exit_status = main(sys.argv)
     sys.exit(exit_status)

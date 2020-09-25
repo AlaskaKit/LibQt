@@ -7,7 +7,7 @@ from PySide2.QtWidgets import QApplication
 
 
 class Book:
-	def __init__(self, title, author, year):
+	def __init__(self, author, title, year):
 		self.id = None
 		self.author = author
 		self.title = title
